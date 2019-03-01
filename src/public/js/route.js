@@ -3,14 +3,13 @@ selector: null,
 paths: []
 };
 
-function Path(path, callback, type="url") {
+function Path(path, type="url", callback) {
 	this.path = path;
 	this.callback = callback;
 	this.type = type;
 }
 
 const fs = require('fs');
-const $ = require('jquery');
 const path = require('path');
 
 // contains object in array?
@@ -32,8 +31,8 @@ else {
 
 }
 
-route.addPath = (url, callback) => {
-	route.paths.push(new Path(url, callback, "fs"));
+route.addPath = (url, type, callback = () => {}) => { // default callback is blank
+	route.paths.push(new Path(url, type, callback));
 	callback();
 };
 
@@ -53,7 +52,10 @@ route.loadPath = (file) => {
 			// read file:
 			fs.readFile(path.join(__dirname, tempPath.path), "utf-8", (err, data) => {
 				if(err) throw err;
+				// set content to data
 				$(route.selector).html(data);
+				// console.log success
+				console.log("Navigation occured: " + file)
 			});
 		});
 	}
@@ -62,4 +64,18 @@ route.loadPath = (file) => {
 
 route.setSelector = (selector) => {
 	route.selector = selector;
+}
+
+route.disableAnchors = (clickEvent = () => {}) => {
+	$(() => {
+		// disable html anchors
+		$("a").click((event) => {
+			event.preventDefault();
+
+			// navigate with spa
+			route.loadPath($(event.currentTarget).attr("href")); // get href attribute
+			
+			clickEvent($(event.currentTarget).attr("href"));
+		});
+	});
 }

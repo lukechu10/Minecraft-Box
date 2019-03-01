@@ -3,5 +3,12 @@ block js
   script(src="../public/js/spaRoute.js")
 
 block body
+  // menu bar
+  .menu-area
+    .ui.secondary.pointing.menu
+      a(href="index.html").item.active News
+      a(href="instances.html").item Instances
+      a(href="login.html").item Login
+  // spa content
   .content
-    p LOL
+    p Content goes here

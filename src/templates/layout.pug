@@ -1,8 +1,19 @@
 doctype html
 html
   head
+    // semantic ui
+    link(rel="stylesheet" href="../assets/semantic/dist/semantic.min.css")
+    // animate css
+    link(rel="stylesheet" href="../assets/animate.css")
+    link(rel="stylesheet" href="../public/css/global.css")
     block css
     
+    // load jQuery
+    script.
+      const jQuery = require('jquery');
+      const $ = jQuery;
+    
+    script(src="../assets/semantic/dist/semantic.min.js")
     script(src="../public/js/route.js")
     block js
   body

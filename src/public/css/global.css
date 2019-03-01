@@ -1,0 +1,8 @@
+html {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.content {
+  padding-top: 15pt;
+}

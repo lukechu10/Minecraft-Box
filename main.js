@@ -11,14 +11,20 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-	nodeIntegration: true
+	  nodeIntegration: true,
+    title: "The Minecraft Box",
+    show: false
   });
 
   // and load the index.html of the app.
   mainWindow.loadURL(path.join(__dirname, 'src/views/spa.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
+
+  mainWindow.on('ready-to-show', () => {
+    mainWindow.show()
+  });
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
