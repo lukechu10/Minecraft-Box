@@ -10,10 +10,13 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    npm install
+    npm install -g pug-cli
+  displayName: 'Install NPM modules'
+
+- script: pug src/templates --out ./src/views
+  displayName: 'Build PUG templates'
+
+- script: npm run pack
+  displayName: 'Package app with electron-build'
