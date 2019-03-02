@@ -72,10 +72,16 @@ route.disableAnchors = (clickEvent = () => {}) => {
 		$("a").click((event) => {
 			event.preventDefault();
 
-			// navigate with spa
-			route.loadPath($(event.currentTarget).attr("href")); // get href attribute
-			
-			clickEvent($(event.currentTarget).attr("href"));
+			// check for href attribute
+			if(!($(event.currenttarget).attr("href"))) {
+				// navigate with spa
+				route.loadPath($(event.currentTarget).attr("href")); // get href attribute
+
+				clickEvent($(event.currentTarget).attr("href"));
+			}
+			else {
+				console.log("lol")
+			}
 		});
 	});
 }

@@ -1,0 +1,19 @@
+.ui.container
+  p Signing out, please wait...
+  
+// sign out script
+script.
+  setTimeout(() => {
+    if(confirm("Are you sure you want to sign out?")){
+      auth.clear()
+      auth.set("signIn", false)
+      route.loadPath("login.html");
+      updateActive("login.html");
+    }
+    else {
+      route.loadPath("index.html");
+      updateActive("index.html");
+    }
+  }, 500);
+  
+  

@@ -1,5 +1,15 @@
 link(rel="stylesheet" href="../public/css/login.css")
+script(src="../public/js/login.js")
 
-.ui.grid.container.overlay
-  h1.animated.slideInRight.faster Login
-  br
+.overlay
+  img.background-img(src="../assets/img/login-background.png")
+  .ui.container.animate.fadeIn(style="padding-top: 10px")
+    h1.animated.slideInRight.faster.color-white Login
+    br
+    .ui.fluid.icon.input
+      input(type='text', placeholder='Minecraft username or email')#email-input
+      i.user.icon
+    br
+    .ui.fluid.action.input
+      input(type='password', placeholder='Password')#password-input
+      .ui.button#login-in-button Log In

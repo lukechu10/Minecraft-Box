@@ -6,3 +6,17 @@ html {
 .content {
   padding-top: 15pt;
 }
+
+.color-white {
+  color: white;
+}
+
+.background-img {
+  filter: blur(3px);
+  z-index: -1;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
