@@ -17,7 +17,7 @@ steps:
 - script: |
     npm install pug-cli -g
     pug src/templates --out ./src/views
-  displayName: 'Build PUG templates'
+  displayName: 'Build PUGJS templates'
 
 - script: npm run pack
   displayName: 'Package app with electron-build'
