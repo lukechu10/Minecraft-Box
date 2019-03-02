@@ -1,9 +1,0 @@
-language: node_js
-node_js:
-  - "10"
-
-script:
-  - npm install
-  - npm install -g pug-cli
-  - pug src/templates --out ./src/views
-  - npm run pack
