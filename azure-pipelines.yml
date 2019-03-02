@@ -12,10 +12,11 @@ pool:
 steps:
 - script: |
     npm install
-    npm install -g pug-cli
   displayName: 'Install NPM modules'
 
-- script: pug src/templates --out ./src/views
+- script: |
+    npm install pug-cli -g
+    pug src/templates --out ./src/views
   displayName: 'Build PUG templates'
 
 - script: npm run pack
