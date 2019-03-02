@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'win1803'
+
+steps:
+- script: |
+    npm install
+  displayName: 'Install NPM modules'
+
+- script: |
+    npm install pug-cli -g
+    pug src/templates --out ./src/views
+  displayName: 'Build PUGJS templates'
+
+- script: npm run pack
+  displayName: 'Package app with electron-build'
