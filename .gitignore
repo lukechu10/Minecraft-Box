@@ -70,8 +70,11 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
-# builds
+# Packaged builds
 dist/
+
+# Rendered templates
+src/views/
 
 # Dependency directories
 node_modules/
