@@ -15,7 +15,7 @@ const createWindow = () => {
     title: "The Minecraft Box",
     show: false
   });
-
+  
   // and load the index.html of the app.
   mainWindow.loadURL(path.join(__dirname, 'src/views/spa.html'));
 
