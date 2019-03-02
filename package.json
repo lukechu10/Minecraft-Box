@@ -7,7 +7,15 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pug": "\"bin\\pug-build\"",
-    "watch-pug": "nodemon --watch src\\templates --ext pug --exec \"bin\\pug-build\""
+    "watch-pug": "nodemon --watch src\\templates --ext pug --exec \"bin\\pug-build\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "app.themcbox",
+    "mac": {
+      "category": "your.app.category.type"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,9 +31,12 @@
   },
   "homepage": "https://github.com/lukechu10/Minecraft-Box#readme",
   "dependencies": {
-    "electron": "^4.0.6",
     "jquery": "^3.3.1",
     "nodemon": "^1.18.10",
     "semantic-ui": "^2.4.2"
+  },
+  "devDependencies": {
+    "electron": "^4.0.6",
+    "electron-builder": "^20.38.5"
   }
 }
