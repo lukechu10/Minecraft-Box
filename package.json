@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "npm run pug && npm start",
+    "test": "npm run pug",
     "pug": "\"bin\\pug-build\"",
     "watch-pug": "nodemon --watch src\\templates --ext pug --exec \"bin\\pug-build\""
   },
