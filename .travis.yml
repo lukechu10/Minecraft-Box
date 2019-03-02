@@ -3,6 +3,5 @@ node_js:
   - "10"
 
 script:
-  - npm run pug
-  - npm start
+  - pug src/templates --out ./src/views
   - npm run pack
