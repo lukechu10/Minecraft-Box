@@ -53,7 +53,7 @@ $(() => {
 var updateName = () => {
   if(auth.get("signedIn") == true) {
     $("#mcName").text(auth.get("selectedProfile").name); // name stored in auth.cfg from mc api
-    $("#mcFace").attr("src", "https://crafatar.com/avatars/" + auth.get("selectedProfile").id + "?size=25")
+    $("#mcFace").attr("src", "https://minotar.net/helm/" + auth.get("selectedProfile").id + "/100.png")
     $("#skinRender").attr("src", "https://minotar.net/armor/body/" + auth.get("selectedProfile").id + "/100.png")
     $("#userId").text(auth.get("selectedProfile").id)
   }

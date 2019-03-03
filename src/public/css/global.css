@@ -7,10 +7,6 @@ html {
   padding-top: 15pt;
 }
 
-.color-white {
-  color: white;
-}
-
 .background-img {
   filter: blur(3px);
   z-index: -1;
@@ -25,10 +21,15 @@ html {
   padding: 0;
   margin-top: auto;
   margin-bottom: auto;
+  height: 25px;
 }
 
 .no-select {
   user-select: none !important;
+}
+
+a {
+  -webkit-user-drag: none;
 }
 
 #userId {
