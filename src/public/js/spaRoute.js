@@ -34,6 +34,7 @@ route.addPath("login.html", "fs");
 route.addPath("index.html", "fs");
 route.addPath("instances.html", "fs");
 route.addPath("youtube.html", "fs");
+route.addPath("twitch.html", "fs");
 route.addPath("signout.html", "fs");
 
 // default page
