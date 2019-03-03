@@ -26,6 +26,9 @@ var updateActive = (hrefSelector) => {
 		$("#authLink").attr("href", "login.html");
 		$("#authLink").html("Log In");
 	}
+
+  // update mc name
+  updateName();
 }
 
 route.disableAnchors(updateActive);
@@ -43,3 +46,11 @@ route.loadPath("index.html");
 $(() => {
 	updateActive("index.html");
 });
+
+// get mc username and add to site
+var updateName = () => {
+  if(auth.get("signedIn") == true) {
+    $("#mcName").text(auth.get("selectedProfile").name); // name stored in auth.cfg from mc api
+    $("#mcFace").attr("src", " https://crafatar.com/avatars/" + auth.get("selectedProfile").id + "?size=25")
+  }
+}
