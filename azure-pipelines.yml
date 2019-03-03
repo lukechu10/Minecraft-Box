@@ -19,3 +19,6 @@ steps:
 
 - script: npm run pack
   displayName: 'Package app with electron-build'
+
+- script: npm run dist
+  displayName: 'Distribute app with electron-build'
