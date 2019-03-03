@@ -14,7 +14,7 @@ const createWindow = () => {
 	  nodeIntegration: true,
     title: "The Minecraft Box",
     show: false,
-    icon: path.join(__dirname, 'src/assets/icon.ico')
+    icon: path.join(__dirname, 'build/icon.ico')
   });
 
   // and load the index.html of the app.

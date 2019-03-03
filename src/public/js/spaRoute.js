@@ -1,4 +1,5 @@
 const Store = require('electron-store');
+// file for authentication
 const auth = new Store({
   name: "auth",
   fileExtension: "cfg",
@@ -7,6 +8,12 @@ const auth = new Store({
     signedIn: false
   }
 });
+
+// file for versions (offline use)
+const versionList = new Store({
+  name: "versionList",
+  fileExtension: "cfg",
+})
 
 const shell = require("electron").shell;
 
