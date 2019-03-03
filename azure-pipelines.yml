@@ -16,7 +16,7 @@ steps:
 
 - script: |
     npm install pug-cli -g
-    pug src/templates --out ./src/views
+    npm run pug
   displayName: 'Build PUGJS templates'
 
 - script: npm run pack
