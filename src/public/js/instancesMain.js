@@ -1,0 +1,3 @@
+var generateCmd = async(options={}) => {
+  
+}
