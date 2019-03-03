@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- mc-versions
 
 pool:
   vmImage: 'win1803'
