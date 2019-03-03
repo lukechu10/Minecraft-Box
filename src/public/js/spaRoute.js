@@ -8,7 +8,9 @@ const auth = new Store({
   }
 });
 
-route.setSelector(".content");
+const shell = require("electron").shell;
+
+route.setSelector(".spa-content");
 
 // update .active class
 var updateActive = (hrefSelector) => {
@@ -51,6 +53,8 @@ $(() => {
 var updateName = () => {
   if(auth.get("signedIn") == true) {
     $("#mcName").text(auth.get("selectedProfile").name); // name stored in auth.cfg from mc api
-    $("#mcFace").attr("src", " https://crafatar.com/avatars/" + auth.get("selectedProfile").id + "?size=25")
+    $("#mcFace").attr("src", "https://crafatar.com/avatars/" + auth.get("selectedProfile").id + "?size=25")
+    $("#skinRender").attr("src", "https://minotar.net/armor/body/" + auth.get("selectedProfile").id + "/100.png")
+    $("#userId").text(auth.get("selectedProfile").id)
   }
 }

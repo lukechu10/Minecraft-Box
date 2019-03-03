@@ -1,6 +1,7 @@
 extends layout
 block js
   script(src="../public/js/spaRoute.js")
+  script(src="../public/js/globalEvents.js")
 
 block body
   // menu bar
@@ -11,9 +12,30 @@ block body
       a(href="youtube.html").item YouTube
       a(href="twitch.html").item Twitch
       .right.menu
-        img.item#mcFace
-        .item#mcName
+        img.item#mcFace.mcUser
+        .item#mcName.mcUser
         a.item#authLink(href="signout.html") Sign Out
   // spa content
-  .content
+  .spa-content
     p Content goes here
+  
+  #modalDefs
+    .ui.basic.modal.skin-modal.no-select
+      i.close.icon
+      .header Options
+      .image.content
+        .ui.medium.image
+          img#skinRender
+        .description
+          h4 Links
+          ul
+            li
+              a(onclick="shell.openExternal('https://my.minecraft.net/en-us/profile/skin')" href="") Change Skin (on minecraft.net)
+            li
+              a(onclick="shell.openExternal('https://my.minecraft.net/en-us/profile/')" href="") View Profile (on minecraft.net)
+          strong NOTE:
+          p Many of these features will become availible inside the app in futur releases.
+      .content
+        i.fas.fa-id-badge(style="margin-right: 7px !important;")
+        i(style="font-weight: bold;") User ID: 
+        i#userId

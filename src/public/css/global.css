@@ -3,7 +3,7 @@ html {
   -webkit-user-drag: none;
 }
 
-.content {
+.spa-content {
   padding-top: 15pt;
 }
 
@@ -25,4 +25,12 @@ html {
   padding: 0;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.no-select {
+  user-select: none !important;
+}
+
+#userId {
+  user-select: text !important;
 }
