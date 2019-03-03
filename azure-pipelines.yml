@@ -6,36 +6,16 @@
 trigger:
 - master
 
-jobs:
-- job: Windows
-  pool:
-    vmImage 'win1803'
-  steps:
-  - script: |
-      npm install
-    displayName: 'Install NPM modules'
+pool:
+  vmImage: 'win1803'
 
-  - script: npm install pug-cli -g && npm run pug
-    displayName: 'Build PUGJS templates'
+steps:
+- script: |
+    npm install
+  displayName: 'Install NPM modules'
 
-  - script: npm run pack
-    displayName: 'Package app with electron-build'
+- script: npm install pug-cli -g && npm run pug
+  displayName: 'Build PUGJS templates'
 
-  - script: npm pack
-    displayName: 'Package app with NPM to tarball'
-- job: macOS
-  pool:
-    vmImage 'macOS-10.13'
-  steps:
-  - script: |
-      npm install
-    displayName: 'Install NPM modules'
-
-  - script: npm install pug-cli -g && npm run pug
-    displayName: 'Build PUGJS templates'
-
-  - script: npm run pack
-    displayName: 'Package app with electron-build'
-
-  - script: npm pack
-    displayName: 'Package app with NPM to tarball'
+- script: npm run pack
+  displayName: 'Package app with electron-build'
