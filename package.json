@@ -1,6 +1,6 @@
 {
   "name": "minecraft-box",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha.0",
   "description": "Open source Minecraft launcher",
   "main": "main.js",
   "scripts": {
@@ -12,10 +12,15 @@
     "dist": "electron-builder"
   },
   "build": {
+	"productName": "The Minecraft Box",
     "appId": "app.themcbox",
     "mac": {
       "category": "your.app.category.type"
-    }
+    },
+	"nsis": {
+		"oneClick": "false",
+		"perMachine": "false"
+	}
   },
   "repository": {
     "type": "git",
