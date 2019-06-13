@@ -7,15 +7,22 @@ const path = require('path');
 let mainWindow;
 
 const createWindow = () => {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-	  nodeIntegration: true,
-    title: "The Minecraft Box",
-    show: false,
-    icon: path.join(__dirname, 'build/icon.ico')
-  });
+    // Create the browser window.
+    // Size properties are based on the Westrcraft Launcher while-as some others are from Mtechnik@github
+    mainWindow = new BrowserWindow({
+        width: 980,
+        height: 600,
+        frame: true,
+        nodeIntegration: true,
+        transparent: false,
+        maximizable: false,
+        minimizable: true,
+        resizable: true,
+        closable: true,
+        title: "The Minecraft Box",
+        show: false,
+        icon: path.join(__dirname, 'build/icon.ico')
+    });
 
   // and load the index.html of the app.
   mainWindow.loadURL(path.join(__dirname, 'src/views/spa.html'));
@@ -26,6 +33,9 @@ const createWindow = () => {
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   });
+
+  // Disable Default Menubar
+  mainWindow.setMenu(null);
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
