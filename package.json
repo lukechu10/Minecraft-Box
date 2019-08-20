@@ -12,15 +12,15 @@
     "dist": "electron-builder"
   },
   "build": {
-	"productName": "The Minecraft Box",
+    "productName": "The Minecraft Box",
     "appId": "app.themcbox",
     "mac": {
       "category": "your.app.category.type"
     },
-	"nsis": {
-		"oneClick": "false",
-		"perMachine": "false"
-	}
+    "nsis": {
+      "oneClick": "false",
+      "perMachine": "false"
+    }
   },
   "repository": {
     "type": "git",
